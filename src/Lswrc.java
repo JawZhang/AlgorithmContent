@@ -41,7 +41,6 @@ public class Lswrc {
 	}
 
 	public static void main(String[] args) {
-
 		String str = "anivaf";
 		int result;
 		Lswrc ls = new Lswrc();
