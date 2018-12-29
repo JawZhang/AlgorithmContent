@@ -17,13 +17,16 @@ public class Lswrc {
 //				} else {
 //					s2 = s3;
 //				}
-				for (int j = 0; j <= s2.length() && !s3.equals(s2.substring(s2.length())); j++) {
-					if(!s2.substring(j).contains(s3) && !"".equals(s2.substring(j))){
-						s2 = s2.substring(j) + s3;
-					} else if(s2.substring(j).equals(s3)){
-						s2 = s3;
-					}
-				}
+//				for (int j = 0; j < s2.length() && !s3.equals(s2.substring(s2.length())); j++) {
+//					if(s2.substring(j,j+1).equals(s3) && !"".equals(s2.substring(j))){
+//						s2 = s2.substring(j+1) + s3;
+//						continue;
+//					}
+//					} else if(s2.substring(j).equals(s3)){
+//						s2 = s3;
+//					}
+				findstr(s2,s3);
+
 				continue;
 			} else {
 				s2 += s3;
@@ -38,6 +41,15 @@ public class Lswrc {
 		}
 		return max;
 
+	}
+
+	public String findstr(String s,String c){
+		for (int j = 0; j < s.length() && !c.equals(s.substring(s.length())); j++) {
+			if (s.substring(j, j + 1).equals(c) && !"".equals(s.substring(j))) {
+				s = s.substring(j + 1) + c;
+			}
+		}
+		return s;
 	}
 
 	public static void main(String[] args) {
